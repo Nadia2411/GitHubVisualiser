@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    html {
+        font-family: "Helvetica", sans-serif; 
+        text-align: center;
+        background-color: rgb(41, 49, 58);
+        color:  rgb(236, 239, 241);
+    }
+    title{
+        font-family: "Lucida Console", sans-serif; 
+        font-weight: bold;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Github Visualiser</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+</head>
+
+<body
+    <div class="container">
+        <div class="container-fluid" class="row" class="mb-2 mt-2 col-md-12">
+            <br>
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <h1 style="text-align:center;">Github Visualiser</h1>
+            <br><br>
+            <form id="myForm" action="startSearch()">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="search" placeholder="Enter GitHub username here..."required>
+                </div>
+                <div class="form-group">
+                    <button onclick="handleInput(1)">Search User</button>
+                </div>
+            </form>
+            <div id="result"></div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="row">
+                    <br><br>
+                    <div class="col-md-6">
+                        <div class="well">
+                            <div style="position:relative; width:700px; height:450px;">
+                                <h3>Most Common Languages</h3>
+                                <canvas id="language"></canvas>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10"><button type="button" class="btn btn-success btn-md"
+                                        onclick="toggleChart();">Donut Chart</button></div>
+                                <div class="col-md-1"></div>
+                            </div><br><br>
+                            <div class="col-md-6">
+                                <div class="well">
+                                    <div style="position:relative; width:700px; height:800px;">
+                                        <h4>Most Common Commit Times</h4>
+                                        <canvas id="commits"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+</body>
+<script src="main.js"></script>
+
+</html>
